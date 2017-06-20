@@ -1,6 +1,34 @@
 
 <div class="jumbotron">
   <h1>Bienvenido Clase 38 y 39</h1>
-  <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  
+  <%= form_tag(action: "new_user") do %>
+	<div>		
+  		<%= label_tag :nombre, "Nombre" %>	
+		<%= text_field_tag :nombre %>
+	</div>
+	<div>		
+  		<%= label_tag :email, "Email" %>	
+		<%= text_field_tag :email %>
+	</div>
+	<div>		
+  		<%= label_tag :edad, "Edad" %>	
+		<%= text_field_tag :edad %>
+	</div>
+
+  <% end %>
+
+  <p><a class="btn btn-primary btn-lg" href='<%= submit_tag%>' role="button">Enviar</a></p>
+
+  	<hr>
+
+	<ul>
+		<% @users.each do |user| %>
+			<li>
+				<%= user.nombre %>
+			</li>			
+		<% end %>
+	</ul>
+
+
 </div>
